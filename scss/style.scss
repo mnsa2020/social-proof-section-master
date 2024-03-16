@@ -1,0 +1,206 @@
+@use "variables" as v;
+@use "global";
+
+// Main
+main {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container {
+    .box {
+      display: grid;
+      align-items: center;
+      grid-template-columns: auto;
+      max-width: 1000px;
+      height: fit-content;
+      gap: 60px;
+      .rated {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        .text {
+          width: 400px;
+          h1 {
+            font-weight: 700;
+            font-size: 50px;
+            letter-spacing: -1px;
+            word-spacing: -1px;
+            line-height: 0.9;
+            margin-bottom: 20px;
+          }
+          p {
+            line-height: 1.4;
+            letter-spacing: -1px;
+            word-spacing: 1px;
+            font-size: 18px;
+          }
+        }
+        .reviews {
+          display: flex;
+          flex-direction: column;
+          .review {
+            display: flex;
+            gap: 25px;
+            padding: 15px 22px;
+            background: v.$LightGrayishMagenta;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            width: 400px;
+            &:first-child {
+              align-self: flex-start;
+            }
+            &:nth-child(2) {
+              align-self: center;
+            }
+            &:last-child {
+              align-self: flex-end;
+            }
+            .star {
+              img {
+                margin-right: 2px;
+              }
+            }
+            p {
+              font-weight: 500;
+              word-spacing: 1.5px;
+            }
+          }
+        }
+      }
+      .buyers {
+        display: flex;
+        gap: 25px;
+        height: 240px;
+        .card {
+          background: v.$VeryDarkMagenta;
+          border-radius: 5px;
+          padding: 35px 28px;
+          color: v.$White;
+          &:first-child {
+            align-self: flex-start;
+          }
+          &:nth-child(2) {
+            align-self: center;
+          }
+          &:last-child {
+            align-self: flex-end;
+          }
+          .head {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+            gap: 20px;
+            img {
+              width: 40px;
+              border-radius: 50%;
+            }
+            .title {
+              h3 {
+                letter-spacing: -1px;
+              }
+            }
+          }
+          .body {
+            p {
+              line-height: 1.4;
+            }
+          }
+        }
+      }
+    }
+    //
+    .attribution {
+      padding: 2em;
+      font-size: 11px;
+      text-align: center;
+      a {
+        color: hsl(228, 45%, 44%);
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    height: fit-content;
+    .container {
+      .box {
+        gap: 40px;
+        margin-top: 60px;
+        height: 100%;
+        .rated {
+          grid-template-columns: 1fr;
+          // width: 100%;
+          .text {
+            text-align: center;
+            margin-bottom: 50px;
+            width: 95%;
+            margin-bottom: 40px;
+            h1 {
+              font-size: 40px;
+              line-height: 0.8;
+            }
+            p {
+              word-spacing: unset;
+              letter-spacing: unset;
+            }
+          }
+          .reviews {
+            .review {
+              width: 100%;
+              flex-direction: column;
+              align-items: center;
+              gap: 5px;
+              &:first-child {
+                align-self: center;
+              }
+              &:nth-child(2) {
+                align-self: center;
+              }
+              &:last-child {
+                align-self: center;
+              }
+              .star {
+                img {
+                }
+              }
+              p {
+                font-size: 17px;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+        .buyers {
+          flex-direction: column;
+          height: fit-content;
+          gap: 15px;
+          .card {
+            width: 100%;
+            padding: 40px 40px 30px 40px;
+
+            .head {
+              margin-bottom: 30px;
+              img {
+              }
+              .title {
+                h3 {
+                  letter-spacing: unset;
+                }
+                p {
+                  letter-spacing: 1px;
+                }
+              }
+            }
+            .body {
+              p {
+                word-spacing: 1px;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Main
